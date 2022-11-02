@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function deleteNumberFromArray( arr, n, x){
+
+    let i;
+        for (i=0; i<n; i++)
+            if (arr[i] === x)
+                break;
+        if (i < n)
+        {
+            n = n - 1;
+            for (let j=i; j<n; j++)
+                arr[j] = arr[j+1];
+        }
+
+        return n;
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 51, 10, 12, 16, 32, 15, 17];
+    let n = arr.length;
+    let x = 6;
+    n = deleteNumberFromArray(arr, n, x);
+
+    document.write("Modified array is </br>");
+    for (let i=0; i<n; i++)
+        document.write(arr[i] + " ");
+
+</script>
+</body>
+</html>
